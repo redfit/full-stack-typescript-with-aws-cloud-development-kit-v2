@@ -8,7 +8,9 @@ export class TodoAppStack extends Stack {
 
     const helloWorldFunction = new lambdaNodejs.NodejsFunction(this, 'HelloWorld', {
       entry: "lambda/hello-world.ts",
-      handler: "handler"
+      handler: "handler",
+      memorySize: 256,
+      timeout: Duration.seconds(10)
     });
   }
 }
